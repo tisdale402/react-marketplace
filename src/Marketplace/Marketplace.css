@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    font-size: 100%;
+    color: red;
+}
+
+header {
+    background-color: grey;
+    text-align: center;
+    color: darkgoldenrod;
+    font-size: 145%;
+    letter-spacing: 3px;
+}
+
+footer {
+    background-color: grey;
+    text-align: center;
+    color: darkgoldenrod;
+    font-size: 145%;
+    letter-spacing: 3px;
+}
+
+
+.marketplace {
+    font-size: 1rem;
+    display: block;
+    height: 90vh;
+    width: 100vw;
+    background-color: black;
+    position: relative;
+}
+
+ button {
+     border-radius: 5px;
+     background-color: red;
+     /*display: inline-block;*/
+ }
+
+button:hover {
+    border-radius: 5px;
+    background-color: #660000;
+    cursor: pointer;
+    /*display: inline-block;*/
+}
+
+ img {
+     width: 5rem;
+     height: 5rem;
+ }
+
+ /*.item-form {*/
+ /*    position: absolute;*/
+ /*    bottom: 3rem;*/
+ /*    right: 1rem;*/
+ /*    margin: 1rem;*/
+ /*}*/
+
+ .item {
+     display: inline-block;
+     padding: 3rem;
+     margin: 2rem;
+     text-align: center;
+     width: 7rem;
+     height: 9rem;
+     border : 2px solid blue;
+     background-color: gray;
+     color: white;
+ }
+
+ .items {
+     position: absolute;
+     top: 1rem;
+     left: 3rem;
+ }
+
+ .quantity {
+     width: 1.5rem;
+     height: 1.2rem;
+     border-radius: 5px;
+     text-align: center;
+     margin: .5rem;
+
+ }
+
+ .total-price {
+     position: absolute;
+     right: 1rem;
+ }
+
+ .quantity-btn {
+     width: 1rem;
+     height: 1rem;
+ }
+
+ .modal {
+     width: 12rem;
+     height: 12rem;
+ }
+
+.marketplace-btn {
+    width: 10rem;
+    height: 1rem;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    /*height: 12rem;*/
+}
+
+.delete-btn {
+    position: absolute;
+    width: 5.1rem;
+    height: 1rem;
+    top: 3rem;
+}
+
+/*.btn-click {*/
+/*    border-radius: 5px;*/
+/*    background-color: #660000;*/
+/*    cursor: pointer;*/
+/*    bottom: 10rem;*/
+/*}*/
+
+

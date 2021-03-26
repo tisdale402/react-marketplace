@@ -1,14 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './Containers/App';
+
+import {applyMiddleware, createStore} from "redux";
+import loadList from "./Marketplace/store/sagas/listLoader";
+import marketplaceReducer from './Marketplace/store/reducers/marketplaceReducer';
+import {Provider} from "react-redux";
+import "regenerator-runtime/runtime";
 import reportWebVitals from './reportWebVitals';
+import createSageMiddleware from "redux-saga";
+
+const loadListMiddleware = createSageMiddleware();
+
+const store = createStore(marketplaceReducer, applyMiddleware(loadListMiddleware));
+
+loadListMiddleware.run(loadList);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <Provider store={store}><App /></Provider>, document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
