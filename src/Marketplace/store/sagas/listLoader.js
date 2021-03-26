@@ -7,19 +7,16 @@ import {put, takeLatest} from "@redux-saga/core/effects";
 
 function* loadList() {
     console.log("In Saga loadList generator");
-    const res = [];
+    let res = [];
     yield axios.get('https://marketplace-52be8-default-rtdb.firebaseio.com/items.json')
         .then(response => {
-            console.log(response.data)
-            for (const item in response.data) {
-                console.log(item.name);
-                res.push(item);
-            }
-
+            console.log(response);
+            console.log(Object.values(response.data))
+            res=Object.values(response.data);
         })
     console.log(res);
     yield put({type: actionTypes.LOAD_LIST, res});
-    console.log("LOAD_LIST action dispatched")
+    console.log("LOAD_LIST action dispatched");
 }
 
 function* loadListSE() {

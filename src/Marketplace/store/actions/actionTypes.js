@@ -10,5 +10,4 @@ export const LOAD_LIST = 'LOAD_LIST';
 export const GET_LOAD_LIST = 'GET_LOAD_LIST';
 export const SET_LOAD_LIST = 'SET_LOAD_LIST';
 
-export const getLoadList = () => ({type: GET_LOAD_LIST});
-export const setLoadList = (list) => ({type: SET_LOAD_LIST, list});
+

@@ -4,7 +4,7 @@ import './index.css';
 import App from './Containers/App';
 
 import {applyMiddleware, createStore} from "redux";
-import loadList from "./Marketplace/store/sagas/listLoader";
+import * as sideEffects from './Marketplace/store/sagas/listLoader';
 import marketplaceReducer from './Marketplace/store/reducers/marketplaceReducer';
 import {Provider} from "react-redux";
 import "regenerator-runtime/runtime";
@@ -13,9 +13,9 @@ import createSageMiddleware from "redux-saga";
 
 const loadListMiddleware = createSageMiddleware();
 
-const store = createStore(marketplaceReducer, applyMiddleware(loadListMiddleware));
-
-loadListMiddleware.run(loadList);
+const store = createStore(marketplaceReducer,{}, applyMiddleware(loadListMiddleware));
+Object.values(sideEffects).forEach(loadListMiddleware.run.bind(loadListMiddleware));
+//loadListMiddleware.run(loadList);
 
 ReactDOM.render(
     <Provider store={store}><App /></Provider>, document.getElementById('root')
